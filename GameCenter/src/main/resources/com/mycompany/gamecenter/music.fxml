@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: darkslateblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gamecenter.MusicController">
+   <children>
+      <GridPane layoutX="61.0" layoutY="71.0" prefHeight="573.0" prefWidth="1193.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="115.0" prefWidth="280.0" text="Ambience" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label prefHeight="115.0" prefWidth="280.0" text="Cinematic" textFill="#fffefe" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label prefHeight="115.0" prefWidth="280.0" text="MindFulnes" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label prefHeight="115.0" prefWidth="280.0" text="DawAir" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="load1" mnemonicParsing="false" onAction="#load1" prefHeight="60.0" prefWidth="230.0" text="Cargar" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="load2" mnemonicParsing="false" onAction="#load2" prefHeight="60.0" prefWidth="230.0" text="Cargar" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="load3" mnemonicParsing="false" onAction="#load3" prefHeight="60.0" prefWidth="230.0" text="Cargar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="load4" mnemonicParsing="false" onAction="#load4" prefHeight="60.0" prefWidth="230.0" text="Cargar" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="445.0" layoutY="25.0" text="Selecciona la música" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="goBackbutton" layoutX="536.0" layoutY="732.0" mnemonicParsing="false" onAction="#volverAtras" prefHeight="84.0" prefWidth="286.0" text="Volver Atrás">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

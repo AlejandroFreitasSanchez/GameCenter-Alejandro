@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: darkslateblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.gamecenter.CenterController">
+   <children>
+      <BorderPane layoutX="-8.0" layoutY="-11.0" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: darkslateblue;">
+         <top>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: darkslateblue;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="libraryButton" layoutX="50.0" layoutY="50.0" mnemonicParsing="false" onAction="#goLibrary" prefHeight="100.0" prefWidth="300.0" text="LIBRARY">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="musicPageButton" layoutX="478.0" layoutY="50.0" mnemonicParsing="false" onAction="#goMusciSection" prefHeight="100.0" prefWidth="300.0" text="MUSIC">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="optionsButton" layoutX="898.0" layoutY="50.0" mnemonicParsing="false" onAction="#goOptions" prefHeight="100.0" prefWidth="300.0" text="OPTIONS">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: darkslateblue;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: darkslateblue;" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: darkslateblue;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="unloginButton" layoutX="50.0" layoutY="65.0" mnemonicParsing="false" onAction="#desloguearse" prefHeight="100.0" prefWidth="300.0" text="UNLOGIN">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </bottom>
+         <center>
+            <ImageView fitHeight="204.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../Music&amp;Images/descarga.jpg" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
