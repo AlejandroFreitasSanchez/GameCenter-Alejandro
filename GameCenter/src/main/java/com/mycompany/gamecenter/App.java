@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
+import javafx.stage.Window;
 import javafx.util.Duration;
 import static sun.audio.AudioPlayer.player;
 
@@ -97,7 +98,9 @@ public class App extends Application {
         player = aPlayer;
     }
 
-  
+  public static Window getWindows(){
+      return App.scene.getWindow();
+  }
    
     
 

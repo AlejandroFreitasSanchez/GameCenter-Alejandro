@@ -24,7 +24,8 @@ import javafx.scene.layout.Pane;
  * @author freit
  */
 public class EditCategoryController implements Initializable {
-      private Game c;
+
+    private Game c;
     @FXML
     private TextField nameField;
     @FXML
@@ -35,6 +36,8 @@ public class EditCategoryController implements Initializable {
     private TextField descField;
     @FXML
     private TextField priceField;
+    @FXML
+    private TextField pathField;
 
     /**
      * Initializes the controller class.
@@ -42,26 +45,27 @@ public class EditCategoryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void enviar(ActionEvent event) throws IOException {
-          if (c != null) {
+        if (c != null) {
             //recoge los datos de los texfield y los mete a los atributos del juego
-            c.setName(nameField.getText());
-            c.setDescripcion(descField.getText());
-            c.setPrecio(priceField.getText());
-            //vuelve a la libreria
-            App.setRoot("library");
-        }else{
-            this.c=new Game();
+            //si ninguna campo esta vacio
+            if (this.nameField.getText().length() >= 1 && this.descField.getText().length() >= 1 && this.pathField.getText().length() >= 1 && this.priceField.getText().length() >= 1) {
+                c.setName(nameField.getText());
+                c.setDescripcion(descField.getText());
+                c.setPrecio(priceField.getText());
+                c.setPath(pathField.getText());
+                //vuelve a la libreria
+                App.setRoot("library");
+            }
+        } else {
+            this.c = new Game();
             this.c.setName(nameField.getText());
             Aplicacion.getInstance().addGame(c);
         }
     }
-    
-    
-
 
     public Game getC() {
         return c;
@@ -70,6 +74,9 @@ public class EditCategoryController implements Initializable {
     public void setC(Game c) {
         this.c = c;
         this.nameField.setText(this.c.getName());
+        this.descField.setText(this.c.getDescripcion());
+        this.priceField.setText(this.c.getPrecio());
+        this.pathField.setText(this.c.getPath());
     }
 
     @FXML
@@ -77,5 +84,5 @@ public class EditCategoryController implements Initializable {
         //vuelve a la libreria
         App.setRoot("library");
     }
-    
+
 }

@@ -11,21 +11,30 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -56,6 +65,10 @@ public class LibraryController implements Initializable {
     private TableColumn<Game, String> c_descripcion;
     @FXML
     private TableColumn<Game, String> c_precio;
+    @FXML
+    private TableColumn<Game, Void> c_ejecutar;
+    @FXML
+    private TextField searchField;
    
 
     /**
@@ -79,11 +92,20 @@ public class LibraryController implements Initializable {
         App.setRoot("center");
     }
       private void initTable() {
-        //mete a la lista los juegos que la clase Aplicacion tiene en su array
-        ArrayList categorias = new ArrayList(p.getGame());
-        this.categorias = FXCollections.observableArrayList(categorias);
-        this.tabla_categorias.setItems(p.getGame());
-       
+        
+          //FilteredList para poder buscar por nombre y mete a la lista los juegos que la clase Aplicacion tiene en su array
+          FilteredList<Game> juegos= new FilteredList(p.getGame(), p -> true);
+          //Se añade el filteredList al TableView
+          this.tabla_categorias.setItems(juegos);
+          //Se configura la busqueda
+          searchField.textProperty().addListener((prop, old, text) -> {
+            juegos.setPredicate(a -> {
+        if(text == null || text.isEmpty()) return true;
+        
+        String name = a.getName().toLowerCase();
+        return name.contains(text.toLowerCase());
+    });
+});
 
     }
 
@@ -192,9 +214,48 @@ public class LibraryController implements Initializable {
 
             };
         });
-        
-        
        
+         
+         this.c_ejecutar.setCellFactory(categorytablecell -> {
+            return new TableCell<Game, Void>() {
+                private final Button btn = new Button("Ejecutar");
+                //similar al constructor por defecto
+
+                {
+                     btn.setOnAction((ActionEvent event) -> {
+                        Game data = getTableView().getItems().get(getIndex());
+                        Runtime obj = Runtime.getRuntime();
+                         try { 
+                             obj.exec(data.getPath());
+                         } catch (IOException ex) {
+                             System.out.println("El path del juego es incorrecto o no esta instalado");
+                             
+                             
+
+                         }
+                        
+                        
+                    });
+                }
+
+                /*
+                    Se encarga de pintar el botón
+                 */
+                @Override
+                public void updateItem(Void item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setGraphic(null);
+                    } else {
+                        setGraphic(btn);
+                    }
+                }
+            };
+
+        });
+         
+       
+
 
     }
 
@@ -216,6 +277,10 @@ public class LibraryController implements Initializable {
         EditCategoryController sc = fxmlLoader.getController();
 
         contenedor.getChildren().add(t);
+    }
+
+    private void searchGame(ActionEvent event) throws IOException {
+        App.setRoot("buscador");
     }
     
 }

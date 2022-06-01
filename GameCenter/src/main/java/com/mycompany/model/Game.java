@@ -17,6 +17,7 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
 
 /**
  *
@@ -27,7 +28,9 @@ public class Game {
     private String name;
     private String descripcion;
     private String precio;
-
+    private String path;
+   
+ 
     public Game() {
        
         this.name = "";
@@ -77,6 +80,22 @@ public class Game {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    /**
+     * @return the path
+     */
+    public String getPath() {
+        return path;
+    }
+
+    /**
+     * @param path the path to set
+     */
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+  
 
     
 

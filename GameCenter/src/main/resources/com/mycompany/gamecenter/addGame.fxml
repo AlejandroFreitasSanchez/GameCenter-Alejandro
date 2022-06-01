@@ -16,12 +16,12 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="270.0" layoutY="354.0" prefHeight="80.0" prefWidth="225.0" text="Descripción" textFill="WHITE">
+            <Label layoutX="270.0" layoutY="291.0" prefHeight="80.0" prefWidth="225.0" text="Descripción" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="270.0" layoutY="505.0" prefHeight="80.0" prefWidth="225.0" text="Precio" textFill="WHITE">
+            <Label layoutX="270.0" layoutY="382.0" prefHeight="80.0" prefWidth="225.0" text="Precio" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
@@ -30,11 +30,11 @@
                <font>
                   <Font size="36.0" />
                </font></TextField>
-            <TextField fx:id="descField" layoutX="740.0" layoutY="359.0" prefHeight="80.0" prefWidth="225.0">
+            <TextField fx:id="descField" layoutX="742.0" layoutY="295.0" prefHeight="80.0" prefWidth="225.0">
                <font>
                   <Font size="36.0" />
                </font></TextField>
-            <TextField fx:id="priceField" layoutX="740.0" layoutY="505.0" prefHeight="80.0" prefWidth="225.0">
+            <TextField fx:id="priceField" layoutX="742.0" layoutY="391.0" prefHeight="80.0" prefWidth="225.0">
                <font>
                   <Font size="36.0" />
                </font></TextField>
@@ -48,6 +48,16 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Button>
+            <Label layoutX="270.0" layoutY="489.0" prefHeight="80.0" prefWidth="225.0" text="Path" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pathField" layoutX="742.0" layoutY="491.0" prefHeight="80.0" prefWidth="225.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </TextField>
          </children>
       </Pane>
    </children>

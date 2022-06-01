@@ -59,6 +59,8 @@ public class Aplicacion {
         c.setName("Lol");
         c.setDescripcion("League of Legends es un videojuego del género multijugador de arena de batalla en línea y deporte electrónico el cual fue desarrollado por Riot Games para Microsoft Windows y OS X y para consolas digitales. ");
         c.setPrecio("Free");
+        c.setPath("\"C:\\Riot Games\\League of Legends\\LeagueClient.exe\"");
+       
         this.addGame(c);
        
         c = new Game();
@@ -66,6 +68,7 @@ public class Aplicacion {
         c.setName("Call of Duty");
         c.setDescripcion("Call of Duty es una serie de videojuegos de disparos en primera persona");
         c.setPrecio("60");
+        c.setPath("\"C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe\"");
         this.addGame(c);
 
         c = new Game();
@@ -73,13 +76,15 @@ public class Aplicacion {
         c.setName("Dota");
         c.setDescripcion("Dota 2 es un videojuego perteneciente al género de Arena de batalla en línea ARTS, también conocido como MOBA");
         c.setPrecio("Free");
+        c.setPath("a");
         this.addGame(c);
             
         c= new Game();
         c.setId(4);
-        c.setName("the binding of isacc ");
+        c.setName("the binding of isacc");
         c.setDescripcion("The Binding of Isaac es un juego de acción RPG con fuertes elementos de tipo Roguelike, en el cual los niveles son generados aleatoriamente");
         c.setPrecio("25");
+        c.setPath("\"C:\\Users\\freit\\Dropbox\\Mi PC (DESKTOP-4DJBEG0)\\Desktop\\The.Binding.of.Isaac.Rebirth.v1.7.8a\\The.Binding.of.Isaac.Rebirth.v1.7.8a\\Game\\isaac-ng.exe\"");
        this.addGame(c);
         
           

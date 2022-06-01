@@ -35,6 +35,8 @@ public class AddGameController implements Initializable {
     @FXML
     private Button goBackButton;
     private Aplicacion p;
+    @FXML
+    private TextField pathField;
    
     /**
      * Initializes the controller class.
@@ -52,9 +54,15 @@ public class AddGameController implements Initializable {
         c.setId(p.getCategorias().size());
         c.setDescripcion(this.descField.getText());
         c.setPrecio(this.priceField.getText());
-        p.addGame(c);
-        //vuelve a libreria
-        App.setRoot("library");
+        c.setPath(this.pathField.getText());
+        
+        //vuelve a libreria y se añade el juego solo si ningun campo esta vacio
+        if(this.nameField.getText().length()>=1 && this.pathField.getText().length()>=1 && this.descField.getText().length()>=1 && this.priceField.getText().length()>=1){
+             p.addGame(c);
+            App.setRoot("library");
+           
+        }
+        
         
     }
 

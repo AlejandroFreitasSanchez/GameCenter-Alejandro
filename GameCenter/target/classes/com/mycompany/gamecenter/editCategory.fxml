@@ -37,6 +37,12 @@
             </Label>
             <TextField fx:id="descField" layoutX="747.0" layoutY="341.0" prefHeight="100.0" prefWidth="250.0" />
             <TextField fx:id="priceField" layoutX="747.0" layoutY="454.0" prefHeight="100.0" prefWidth="250.0" />
+            <Label layoutX="255.0" layoutY="568.0" prefHeight="100.0" prefWidth="269.0" text="Nuevo Path" textFill="#fffdfd">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pathField" layoutX="747.0" layoutY="564.0" prefHeight="100.0" prefWidth="250.0" />
          </children>
       </Pane>
    </children>

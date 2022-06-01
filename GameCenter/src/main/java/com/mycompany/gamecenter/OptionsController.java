@@ -40,49 +40,57 @@ public class OptionsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void setRescale1(ActionEvent event) {
-        //cambia la posicion de los nodos y el tamaño del panel
-        this.panel.getChildren().get(2).relocate(50, 20);
-        this.panel.getChildren().get(0).relocate(150, 50);
-        this.panel.getChildren().get(1).relocate(50, 120);
-        this.panel.setPrefWidth(640);
-        this.panel.setPrefHeight(480);
-            
+        //cambia la posicion de los nodos ,el tamaño del panel y la ventana
+
+        App.getWindows().setWidth(640);
+        App.getWindows().setHeight(480);
+        panel.setPrefSize(650, 480);
+        panel.getChildren().get(1).relocate(0, 0);
+        panel.getChildren().get(2).relocate(200, 400);
+        panel.getChildren().get(0).setVisible(false);
     }
 
     @FXML
     private void setRescale2(ActionEvent event) {
-    //cambia la posicion de los nodos y el tamaño del panel
-    this.panel.getChildren().get(2).relocate(50, 20);
-    this.panel.getChildren().get(0).relocate(150, 50);
-    this.panel.getChildren().get(1).relocate(80, 90);
-    this.panel.setPrefWidth(860);
-    this.panel.setPrefHeight(540);
-        
+        //cambia la posicion de los nodos ,el tamaño del panel y la ventana
+
+        App.getWindows().setWidth(960);
+        App.getWindows().setHeight(540);
+        panel.setPrefSize(960, 540);
+        panel.getChildren().get(1).relocate(0, 0);
+        panel.getChildren().get(2).relocate(200, 400);
+        panel.getChildren().get(0).setVisible(false);
+
     }
 
     @FXML
     private void setRescale3(ActionEvent event) {
-        //cambia la posicion de los nodos y el tamaño del panel
-        this.panel.getChildren().get(2).relocate(100, 40);
-        this.panel.getChildren().get(0).relocate(350, 70);
-        this.panel.getChildren().get(1).relocate(160, 110);
-        this.panel.setPrefWidth(1300);
-        this.panel.setPrefHeight(900);
+        //cambia la posicion de los nodos ,el tamaño del panel y la ventana
+
+        App.getWindows().setWidth(1300);
+        App.getWindows().setHeight(900);
+        panel.setPrefSize(1300, 900);
+        panel.getChildren().get(1).relocate(332, 152);
+        panel.getChildren().get(2).relocate(332, 600);
+        panel.getChildren().get(0).setVisible(true);
     }
 
     @FXML
     private void setRescale4(ActionEvent event) {
-            //cambia la posicion de los nodos y el tamaño del panel
-            this.panel.getChildren().get(2).relocate(120, 40);
-            this.panel.getChildren().get(0).relocate(370, 70);
-            this.panel.getChildren().get(1).relocate(280, 210);
-            this.panel.setPrefWidth(1920);
-            this.panel.setPrefHeight(1080);
-         
+        //cambia la posicion de los nodos ,el tamaño del panel y la ventana
+
+        App.getWindows().setWidth(1920);
+        App.getWindows().setHeight(1080);
+        panel.setPrefSize(1920, 1080);
+        panel.getChildren().get(1).relocate(332, 242);
+        panel.getChildren().get(2).relocate(332, 740);
+        panel.getChildren().get(0).setVisible(true);
+        
+
     }
 
     @FXML
@@ -90,5 +98,5 @@ public class OptionsController implements Initializable {
         //vuelve a la pagina center
         App.setRoot("center");
     }
-    
+
 }
