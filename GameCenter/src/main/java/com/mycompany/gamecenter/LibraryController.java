@@ -69,6 +69,10 @@ public class LibraryController implements Initializable {
     private TableColumn<Game, Void> c_ejecutar;
     @FXML
     private TextField searchField;
+    @FXML
+    private DialogPane msg;
+    @FXML
+    private Button closeMsg;
    
 
     /**
@@ -229,7 +233,7 @@ public class LibraryController implements Initializable {
                              obj.exec(data.getPath());
                          } catch (IOException ex) {
                              System.out.println("El path del juego es incorrecto o no esta instalado");
-                             
+                             msg.setVisible(true);
                              
 
                          }
@@ -282,5 +286,12 @@ public class LibraryController implements Initializable {
     private void searchGame(ActionEvent event) throws IOException {
         App.setRoot("buscador");
     }
+
+    @FXML
+    private void cerrarMSG(ActionEvent event) {
+        msg.setVisible(false);
+    }
+
+    
     
 }

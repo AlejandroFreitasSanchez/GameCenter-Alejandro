@@ -28,29 +28,31 @@ import javax.xml.bind.JAXBException;
  * @author freit
  */
 public class Aplicacion {
-      private ObservableList<Game> categorias;
-     
-      
+
+    private ObservableList<Game> categorias;
+
     private static Aplicacion instance;
-    static{
-        instance=null;
+
+    static {
+        instance = null;
     }
+
     private Aplicacion() {
-         this.categorias = FXCollections.observableArrayList();
-     
-       
-       // this.categorias = new HashMap<>();
+        this.categorias = FXCollections.observableArrayList();
+
+        // this.categorias = new HashMap<>();
     }
-    public static Aplicacion getInstance(){
-        if(instance==null){
-            instance= new Aplicacion();
+
+    public static Aplicacion getInstance() {
+        if (instance == null) {
+            instance = new Aplicacion();
             instance.init();
-            
+
         }
         return instance;
-            
+
     }
-    
+
     private void init() {
         Game c;
         //Juegos por defecto de la aplicacion
@@ -60,9 +62,9 @@ public class Aplicacion {
         c.setDescripcion("League of Legends es un videojuego del género multijugador de arena de batalla en línea y deporte electrónico el cual fue desarrollado por Riot Games para Microsoft Windows y OS X y para consolas digitales. ");
         c.setPrecio("Free");
         c.setPath("\"C:\\Riot Games\\League of Legends\\LeagueClient.exe\"");
-       
+
         this.addGame(c);
-       
+
         c = new Game();
         c.setId(2);
         c.setName("Call of Duty");
@@ -78,33 +80,53 @@ public class Aplicacion {
         c.setPrecio("Free");
         c.setPath("a");
         this.addGame(c);
-            
-        c= new Game();
+
+        c = new Game();
         c.setId(4);
         c.setName("the binding of isacc");
         c.setDescripcion("The Binding of Isaac es un juego de acción RPG con fuertes elementos de tipo Roguelike, en el cual los niveles son generados aleatoriamente");
         c.setPrecio("25");
         c.setPath("\"C:\\Users\\freit\\Dropbox\\Mi PC (DESKTOP-4DJBEG0)\\Desktop\\The.Binding.of.Isaac.Rebirth.v1.7.8a\\The.Binding.of.Isaac.Rebirth.v1.7.8a\\Game\\isaac-ng.exe\"");
-       this.addGame(c);
+        this.addGame(c);
+
+        c = new Game();
+        c.setId(5);
+        c.setName("FIFA12");
+        c.setDescripcion("Simulador de futbol");
+        c.setPrecio("60");
+        c.setPath("AAA");
+        this.addGame(c);
         
-          
+        c = new Game();
+        c.setId(6);
+        c.setName("Minecraft");
+        c.setDescripcion("Juego Sandbox con voxels");
+        c.setPrecio("20");
+        c.setPath("\"C:\\Users\\freit\\AppData\\Local\\DBeaver\\dbeaver.exe\"");
+        this.addGame(c);
+
     }
+
     //devuelve los juegos
     public ObservableList<Game> getGame() {
         return this.getCategorias();
     }
+
     //añadir juego al arraylist
-    public void addGame(Game c) {    
-        this.getCategorias().add( c);
+    public void addGame(Game c) {
+        this.getCategorias().add(c);
     }
+
     //borra un juego 
-    public Game removeCategory(Game c){
+    public Game removeCategory(Game c) {
         return this.getCategorias().remove(c.getId());
     }
+
     //borra un juego por id
-    public boolean removeCategory(Integer id){
-        return this.getCategorias().removeIf(e-> e.getId()==id);
+    public boolean removeCategory(Integer id) {
+        return this.getCategorias().removeIf(e -> e.getId() == id);
     }
+
     //te devuelve un juego
     public Game getCategory(Integer id) {
         return this.getCategorias().get(id);
@@ -123,6 +145,5 @@ public class Aplicacion {
     public void setCategorias(ObservableList<Game> categorias) {
         this.categorias = categorias;
     }
-   
-    
+
 }
